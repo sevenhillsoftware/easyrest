@@ -9,16 +9,14 @@ import javax.ws.rs.core.Response;
 public class ContentVersionResource {
 
     @GET
-    @Path("/")
-    @Produces("text/html;level=1")
-    public Response testProduceHTMLLevel1Response() {
-        return Response.ok().entity("text/html;level=1").build();
+    @Produces("application/vnd.test;version=1")
+    public Response test1() {
+        return Response.ok("Version 1", "application/vnd.test").build();
     }
 
     @GET
-    @Path("/")
-    @Produces("text/html;level=2")
-    public Response testProduceHTMLLevel2Response() {
-        return Response.ok().entity("text/html;level=2").build();
+    @Produces("application/vnd.test;version=2")
+    public Response test2() {
+        return Response.ok("Version 2", "application/vnd.test").build();
     }
 }
